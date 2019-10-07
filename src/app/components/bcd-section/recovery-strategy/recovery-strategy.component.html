@@ -1,0 +1,51 @@
+<div>
+  <p-button class="btnAdd" label="ADD" (onClick)="addNar()"></p-button>
+  <table class="example-full-width" cellspacing="0" >
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput placeholder="Reference #">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <input matInput placeholder="Workflow #">
+        </mat-form-field>
+      </td>
+      
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput placeholder="BCD #">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field color="accent">
+          <mat-label>Created Date</mat-label>
+          <input matInput [matDatepicker]="picker2">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <mat-form-field>
+          <input matInput placeholder="Reference #">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field color="accent">
+          <mat-label>Created Date</mat-label>
+          <input matInput [matDatepicker]="picker1">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1 color="primary"></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </tr>
+
+  </table>
+</div>

@@ -1,0 +1,45 @@
+<!-- <p-accordion>
+    <p-accordionTab header="BCD Details" [selected]="true">
+        <bcd-details></bcd-details>
+    </p-accordionTab>
+    <p-accordionTab header="BIA Objectives">
+      <bia-section></bia-section>
+    </p-accordionTab>
+    <p-accordionTab header="Recovery Strategy">
+      <recstrategy-section></recstrategy-section> 
+    </p-accordionTab>
+</p-accordion>
+<router-outlet></router-outlet> -->
+
+<p-accordion>
+    <p-accordionTab header="BCD Details" [selected]="true">
+        <bcd-details></bcd-details>
+    </p-accordionTab>
+    <p-accordionTab header="BIA Objectives">
+        <mat-tab-group >
+            <mat-tab label="NAR">
+              <nar></nar>
+            </mat-tab>
+            <mat-tab label="Functions">
+              <functions></functions>
+            </mat-tab>
+            <mat-tab label="Recovery Strategy">
+              <recovery-strategy></recovery-strategy>
+            </mat-tab>
+          </mat-tab-group>
+    </p-accordionTab>
+    <p-accordionTab header="Recovery Strategy">
+        <!-- <mat-tab-group >
+            <mat-tab label="NAR">
+              <nar></nar>
+            </mat-tab>
+            <mat-tab label="Functions">
+              <functions></functions>
+            </mat-tab>
+            <mat-tab label="Recovery Strategy">
+              <recovery-strategy></recovery-strategy>
+            </mat-tab>
+          </mat-tab-group>  -->
+    </p-accordionTab>
+</p-accordion>
+<router-outlet></router-outlet>

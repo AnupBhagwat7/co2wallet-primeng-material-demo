@@ -1,0 +1,65 @@
+<div id="list" *ngIf="displayList1">
+<p-table [value]="functions2" dataKey="name" editMode="row" [paginator]="true" [rows]="8">
+    <ng-template pTemplate="caption">
+        List of NAR Applications
+        <p-button class="btnAdd" label="ADD" (onClick)="addFunction()"></p-button>
+        <!-- <p-button class="btnAdd" label="ADD" routerLink="nar-add"></p-button> -->
+    </ng-template>
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Function Name</th>
+            <th>Description</th>
+            <th>Value</th>
+            <th>year</th>
+            <th style="width:8em"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+        <tr [pEditableRow]="rowData">
+            <td>
+                {{rowData.name}}
+            </td>
+            <td>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <input pInputText type="text" [(ngModel)]="rowData.desc" required>
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{rowData.desc}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            <td>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <p-dropdown [options]="values" [(ngModel)]="rowData.val" [style]="{'width':'100%'}">
+                        </p-dropdown>
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{rowData.val}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            <td>
+                <p-cellEditor>
+                    <ng-template pTemplate="input">
+                        <input pInputText type="text" [(ngModel)]="rowData.year">
+                    </ng-template>
+                    <ng-template pTemplate="output">
+                        {{rowData.year}}
+                    </ng-template>
+                </p-cellEditor>
+            </td>
+            <td style="text-align:center">
+                <button *ngIf="!editing" pButton type="button" pInitEditableRow icon="pi pi-pencil"
+                    class="ui-button-info" (click)="onRowEditInit(rowData)"></button>
+                <button *ngIf="editing" pButton type="button" pSaveEditableRow icon="pi pi-check"
+                    class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(rowData)"></button>
+                <button *ngIf="editing" pButton type="button" pCancelEditableRow icon="pi pi-times"
+                    class="ui-button-danger" (click)="onRowEditCancel(rowData, ri)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>

@@ -1,0 +1,20 @@
+<!-- <p-megaMenu [model]="items">
+  <button pButton label="Logout" icon="fa fa-sign-out"></button>
+  <button routerLink="/login" type="button" class="pi pi-sign-out logoutbtn">
+  <span class="glyphicon glyphicon-log-out"></span> Log out 
+  </button>
+</p-megaMenu> -->
+
+<p-tabMenu [model]="items2" [activeItem]="activeItem">
+    <ng-template pTemplate="item" let-item let-i="index">
+        <div style="position: relative; text-align: center; min-width: 7em">
+            <div class="ui-menuitem-icon" [ngClass]="item.icon" *ngIf="item.icon" style="font-size: 2em"></div>
+            <div class="ui-menuitem-text">
+                {{item.label}}
+            </div>
+            <a tabindex="0" class="ui-menuitem-icon" (click)="closeItem($event, i)" style="position: absolute; right: -1em; top: -.3em; padding: 0" *ngIf="i !== 0">
+                <span class="pi pi-times"></span>
+            </a>
+        </div>
+    </ng-template>
+</p-tabMenu>

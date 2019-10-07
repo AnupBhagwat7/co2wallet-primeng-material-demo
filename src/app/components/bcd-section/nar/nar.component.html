@@ -1,0 +1,29 @@
+<div id="list" *ngIf="displayNarList">
+    <p-table [columns]="cols" [value]="employeeList" sortField="email" sortMode="single">
+        <ng-template pTemplate="caption">
+            List of NAR Applications
+            <p-button class="btnAdd" label="ADD" (onClick)="addNar()"></p-button>
+            <!-- <p-button class="btnAdd" label="ADD" routerLink="nar-add"></p-button> -->
+        </ng-template>
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td *ngFor="let col of columns">
+                    {{rowData[col.field]}}
+                </td>
+            </tr>
+        </ng-template>
+
+        <!--   <ng-template pTemplate="summary">
+      There are {{employeeList?.length}} NARs
+  </ng-template> -->
+    </p-table>
+</div>
+<nar-add *ngIf="displayNarAdd" (valueChange)='hideNarAdd($event)'></nar-add>
+<!-- <router-outlet></router-outlet> -->
