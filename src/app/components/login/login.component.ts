@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+  showSpinner : any;
   username: string;
   password: string;
 
@@ -52,7 +53,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    if (this.username == 'anup.bhagwat7@gmail.com' && this.password == 'password') {
+    if (this.username == 'user' && this.password == 'password') {
       this.router.navigate(["home"]);
     } else {
      console.log("Invalid credentials");

@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'form-material-prime'`, () => {
+  it(`should have as title 'co2wallet-primeng-material-demo'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('form-material-prime');
+    expect(app.title).toEqual('co2wallet-primeng-material-demo');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to form-material-prime!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to co2wallet-primeng-material-demo!');
   });
 });

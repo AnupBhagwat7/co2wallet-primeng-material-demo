@@ -9,6 +9,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to form-material-prime!');
+    expect(page.getTitleText()).toEqual('Welcome to co2wallet-primeng-material-demo!');
   });
 });

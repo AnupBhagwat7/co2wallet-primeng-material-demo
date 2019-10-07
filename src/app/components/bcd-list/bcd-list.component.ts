@@ -15,8 +15,8 @@ export class BcdListComponent implements OnInit {
   private readonly notifier: NotifierService;
 
   // row data and column definitions
-  private users: User[];
-  private columnDefs: ColDef[];
+  users: User[];
+  columnDefs: ColDef[];
   
   // gridApi and columnApi
   private api: GridApi;
@@ -111,7 +111,7 @@ export class BcdListComponent implements OnInit {
   }
   
   //Get updated row
-  onSelectionChanged() {
+  onSelectionChanged(event) {
       var selectedRows = this.api.getSelectedRows();
       this.userToBeEditedFromParent = selectedRows;
       console.log(this.userToBeEditedFromParent);

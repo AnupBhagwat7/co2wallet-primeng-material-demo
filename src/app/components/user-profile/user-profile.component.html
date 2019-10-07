@@ -1,89 +1,90 @@
 <div>
 
-  <table class="example-full-width" cellspacing="0">
-    <tr>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="# of People in household?">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How much Electricity used in household?">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How much gas used in household?">
-        </mat-form-field>
-      </td>
-    </tr>
+  <form [formGroup]="formGroup" novalidate>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="# of People in household?">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How much Electricity used in household?">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How much gas used in household?">
+          </mat-form-field>
+        </td>
+      </tr>
 
-    <tr>
+      <tr>
 
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="Is heating oil,coal,wood or bottled gas used in household?">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How many cars are being used in household?">
-          <mat-radio-group aria-label="How much of the food you eat is organic?">
-            <mat-radio-button value="1">2</mat-radio-button><br>
-            <mat-radio-button value="2">3</mat-radio-button><br>
-            <mat-radio-button value="3">4</mat-radio-button><br>
-            <mat-radio-button value="4">More</mat-radio-button>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="Is heating oil,coal,wood or bottled gas used in household?">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How many cars are being used in household?">
+            <mat-radio-group aria-label="How much of the food you eat is organic?">
+              <mat-radio-button value="1">2</mat-radio-button><br>
+              <mat-radio-button value="2">3</mat-radio-button><br>
+              <mat-radio-button value="3">4</mat-radio-button><br>
+              <mat-radio-button value="4">More</mat-radio-button>
+            </mat-radio-group>
+
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How much meat/dairy you eat personally?">
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How many time times you travel outside?">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <input matInput placeholder="How much of your food produced locally?">
+          </mat-form-field>
+          <mat-radio-group aria-label="How much of your food produced locally?">
+            <mat-radio-button value="1">Very little</mat-radio-button><br>
+            <mat-radio-button value="2">Below Average</mat-radio-button><br>
+            <mat-radio-button value="3">Average</mat-radio-button><br>
+            <mat-radio-button value="4">Above Average</mat-radio-button>
           </mat-radio-group>
 
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How much meat/dairy you eat personally?">
-        </mat-form-field>
-      </td>
-    </tr>
+        </td>
+        <td>
+          <input matInput placeholder="How much of the food you eat is organic?">
+          <mat-radio-group aria-label="How much of the food you eat is organic?">
+            <mat-radio-button value="1">None</mat-radio-button><br>
+            <mat-radio-button value="2">Some</mat-radio-button><br>
+            <mat-radio-button value="3">Most</mat-radio-button><br>
+            <mat-radio-button value="4">All</mat-radio-button>
+          </mat-radio-group>
+        </td>
 
-    <tr>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How many time times you travel outside?">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field>
-          <input matInput placeholder="How much of your food produced locally?">
-        </mat-form-field>
-        <mat-radio-group aria-label="How much of your food produced locally?">
-          <mat-radio-button value="1">Very little</mat-radio-button><br>
-          <mat-radio-button value="2">Below Average</mat-radio-button><br>
-          <mat-radio-button value="3">Average</mat-radio-button><br>
-          <mat-radio-button value="4">Above Average</mat-radio-button>
-        </mat-radio-group>
+      </tr>
 
-      </td>
-      <td>
-        <input matInput placeholder="How much of the food you eat is organic?">
-        <mat-radio-group aria-label="How much of the food you eat is organic?">
-          <mat-radio-button value="1">None</mat-radio-button><br>
-          <mat-radio-button value="2">Some</mat-radio-button><br>
-          <mat-radio-button value="3">Most</mat-radio-button><br>
-          <mat-radio-button value="4">All</mat-radio-button>
-        </mat-radio-group>
-      </td>
-
-    </tr>
-
-    <tr>
-      <td class="content-center">
-        <button mat-raised-button color="accent" [disabled]="!formGroup.valid">Submit</button>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <button mat-raised-button color="accent" (onClick)="goBack()">Cancel</button>
-      </td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-
+      <tr>
+        <td class="content-center">
+          <button mat-raised-button color="accent" [disabled]="!formGroup.valid">Submit</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-raised-button color="accent" (onClick)="goBack()">Cancel</button>
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
 </div>
